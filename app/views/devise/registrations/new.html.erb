@@ -1,0 +1,59 @@
+<nav class="navbar navbar-default" style="background-color: #EC5C51;">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" style='margin-top: -15px;
+'><%= image_tag 'logo.png', :size => "50x50" %></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li ><a href="#" style="color: #fff">LỚP HỌC<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">KIỂM TRA</a></li>
+        <li><%= link_to  'THI ĐẤU', thidau_path %></li>
+        <li><a href="#">HỌC MÀ CHƠI</a></li>
+        <li><a href="#">GIỚI THIỆU</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user">&nbsp;Đăng nhập</span></a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="register">
+  <div class="col-md-5 col-md-offset-4" style="margin-top:50px">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.label :email, "Email" %> 
+    <div class="input-group">
+      <%= f.email_field :email, class: 'form-control', placeholder: 'Email', autofocus: true %>
+      <span class="input-group-addon">
+        <span class="glyphicon glyphicon-user"></span>
+      </span>
+    </div>
+
+    <%= f.label :password, "Password" %> 
+    <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+    <div class="input-group">
+      <%= f.password_field :password, class: 'form-control', placeholder: 'Password', autocomplete: 'off'%>
+      <span class="input-group-addon">
+        <span class="glyphicon glyphicon-lock"></span>
+      </span>
+    </div>
+
+    <%= f.label :Password, "Password confirmation" %> 
+    <div class="input-group">
+      <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password confirmation', autocomplete: 'off'%>
+      <span class="input-group-addon">
+        <span class="glyphicon glyphicon-lock"></span>
+      </span>
+    </div>
+    <div class="actions checkbox col-md-offset-4">
+      <%= f.submit "Tạo Tài Khoản", class: 'btn btn-default' %>
+    </div>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</div>
+</div>

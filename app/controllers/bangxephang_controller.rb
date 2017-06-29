@@ -1,0 +1,2 @@
+class BangxephangController < ApplicationController
+end

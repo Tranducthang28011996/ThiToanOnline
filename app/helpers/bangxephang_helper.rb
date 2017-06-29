@@ -1,0 +1,2 @@
+module BangxephangHelper
+end

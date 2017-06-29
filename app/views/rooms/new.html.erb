@@ -1,0 +1,82 @@
+<nav class="navbar navbar-default" style="background-color: #EC5C51;">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <div style="margin-left: 66px">
+        <%= link_to home_path do %>
+          <%= image_tag 'logo.png', :size => "50x50" %>
+        <% end %>
+      </div>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Tìm phòng đấu", thidau_path %></li>
+       <li><%= link_to "Bảng xếp hạng", bangxephang_path %></li>
+        <li><a href="#">Lịch sử thi đấu </a></li>
+        <li><a href="#">Hướng dẫn</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+        <%= link_to new_user_session_path do %>
+          <i class="glyphicon glyphicon-user"></i> &nbsp;Đăng nhập
+        <% end %>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!-- container -->
+<div class="container col-md-10">
+  <div class="container-left col-sm-9">
+    <div>
+      <div class="container-title col-sm-6">
+        <h3>TẠO PHÒNG THI ĐẤU</h3>
+      </div>
+    </div>
+    <div class="container-list-room col-sm-12" style='height: 435px; background-color: #005C73'>
+      <br>
+      <br>
+      <br>
+      <p>Tạo phòng đấu mới bằng cách chọn hình thức thi đấu và khẩu hiệu phòng (có thể bỏ qua)</p>
+      <br>
+      <p>CHỌN HÌNH THỨC THI ĐẤU</p>
+
+        <input type="radio" name="1vs1" style="margin-left:-45px;margin-top: 24px">Đối kháng (1 vs 1)<br>
+
+        <input type="radio" name="1vs1" style="margin-left:-35px;margin-top: 25px">Đấu tập thể (1 vs 9)<br>
+
+        <div class="container-title-select-one col-sm-3" style='margin-left: 180px' > 
+        <select class="form-control select" id="sel1">
+          <option>Tất cả cá lớp</option>
+          <option>Lớp 2</option>
+          <option>Lớp 3</option>
+          <option>Lớp 4</option>
+          <option>Lớp 5</option>
+        </select>
+      </div>
+      <div class="container-title-select-two col-sm-3">
+        <select class="form-control select" id="sel1">
+          <option>Toán</option>
+          <option>Tiếng Việt</option>
+          <option>Tiếng anh</option>
+          <option>Tiếng Nhật</option>
+        </select>
+      </div>
+      <br>
+      <br>
+      <br>
+       <input type="checkbox" name="1vs1" style="margin-left:-35px;margin-top: 25px"> Phòng thi đấu riêng <br>
+       <br>
+       <br>
+       <button class="btn btn-success">Tạo phòng</button> 
+
+       <button class="btn btn-danger">Thoat</button>
+    </div>
+
+  </div>
+  <div class="container-right col-sm-3 "></div>
+</div>
+<div class="footer col-md-12">
+  
+</div>
