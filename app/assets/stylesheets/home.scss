@@ -94,3 +94,10 @@ tr:hover td{
     background-color: #005C73;
     margin-right: 0px;
 }
+.dropdown-menu>li:hover a {
+    background-color: #A03D3D;
+    border-radius: 12px;
+}
+.dropdown-menu>li {
+    border-bottom: 1px dotted #E6B9B6;
+}
