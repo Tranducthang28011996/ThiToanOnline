@@ -17,11 +17,22 @@
         <li><a href="#">Hướng dẫn</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? == false %>
         <li>
         <%= link_to new_user_session_path do %>
           <i class="glyphicon glyphicon-user"></i> &nbsp;Đăng nhập
         <% end %>
         </li>
+        <% else %>
+          <li class="dropdown" >
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" style='background-color: #EC5C51'><i class="glyphicon glyphicon-user"></i> &nbsp;<%= current_user.email %>
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu" style='background-color: #EC5C51;border-radius: 15px'>
+              <li><%= link_to 'Chỉnh sửa thông tin cá nhân',edit_user_registration_path %></li>
+              <li><%= link_to 'Thoát',  destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -77,134 +88,19 @@
                 <th>Trạng thái</th>
               </tr>
             </thead>
+            <% @listrooms.each do |room| %>
             <tbody>
-              <tr data_href="<%= rooms_path %>" >
+              <tr data_href="<%= phongcho_path(room) %>" >
                 <td>1</td>
-                <td>Tran Duc Thang</td>
-                <td>Thi Toan lop 2</td>
-                <td>Đấu tâp thể </td>
-                <td>Toán</td>
-                <td>2/10</td>
-                <td>Đang chờ</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Tran Duc Thang</td>
-                <td>Thi Toan lop 2</td>
-                <td>Đấu tâp thể </td>
-                <td>Toán</td>
-                <td>2/10</td>
-                <td>Đang chờ</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Tran Duc Thang</td>
-                <td>Thi Toan lop 2</td>
-                <td>Đấu tâp thể </td>
-                <td>Toán</td>
-                <td>2/10</td>
-                <td>Đang chờ</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Tran Duc Thang</td>
-                <td>Thi Toan lop 2</td>
-                <td>Đấu tâp thể </td>
-                <td>Toán</td>
-                <td>2/10</td>
-                <td>Đang chờ</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Tran Duc Thang</td>
-                <td>Thi Toan lop 2</td>
-                <td>Đấu tâp thể </td>
-                <td>Toán</td>
-                <td>2/10</td>
-                <td>Đang chờ</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Tran Duc Thang</td>
-                <td>Thi Toan lop 2</td>
-                <td>Đấu tâp thể </td>
-                <td>Toán</td>
-                <td>2/10</td>
-                <td>Đang chờ</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Tran Duc Thang</td>
-                <td>Thi Toan lop 2</td>
-                <td>Đấu tâp thể </td>
-                <td>Toán</td>
-                <td>2/10</td>
-                <td>Đang chờ</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Tran Duc Thang</td>
-                <td>Thi Toan lop 2</td>
-                <td>Đấu tâp thể </td>
-                <td>Toán</td>
-                <td>2/10</td>
-                <td>Đang chờ</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Tran Duc Thang</td>
-                <td>Thi Toan lop 2</td>
-                <td>Đấu tâp thể </td>
-                <td>Toán</td>
-                <td>2/10</td>
-                <td>Đang chờ</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Tran Duc Thang</td>
-                <td>Thi Toan lop 2</td>
-                <td>Đấu tâp thể </td>
-                <td>Toán</td>
-                <td>2/10</td>
-                <td>Đang chờ</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Tran Duc Thang</td>
-                <td>Thi Toan lop 2</td>
-                <td>Đấu tâp thể </td>
-                <td>Toán</td>
-                <td>2/10</td>
-                <td>Đang chờ</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Tran Duc Thang</td>
-                <td>Thi Toan lop 2</td>
-                <td>Đấu tâp thể </td>
-                <td>Toán</td>
-                <td>2/10</td>
-                <td>Đang chờ</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Tran Duc Thang</td>
-                <td>Thi Toan lop 2</td>
-                <td>Đấu tâp thể </td>
-                <td>Toán</td>
-                <td>2/10</td>
-                <td>Đang chờ</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Tran Duc Thang</td>
-                <td>Thi Toan lop 2</td>
-                <td>Đấu tâp thể </td>
-                <td>Toán</td>
-                <td>2/10</td>
-                <td>Đang chờ</td>
+                <td><%#= room.users.email %></td>
+                <td><%= room.tenphong %></td>
+                <td><%= room.loaiphong %></td>
+                <td><%= room.monthi %></td>
+                <td><%= room.songuoi %></td>
+                <td><%= room.trangthai %></td>
               </tr>
             </tbody>
+            <% end %>
           </table>
         </div>
         <div id="menu1" class="tab-pane fade" style="max-height: 400px; overflow: auto;">

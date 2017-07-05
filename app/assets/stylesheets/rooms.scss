@@ -1,3 +1,44 @@
 // Place all the styles related to the Rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+p{
+  color: black;
+  font-size: 17px;
+}
+
+span{
+  font-size: 18px;
+}
+
+.triangle-left {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-right: 40px solid #246287;
+  border-bottom: 20px solid transparent;
+  float: left;
+}
+.triangle-right {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-left: 40px solid #246287;
+  border-bottom: 20px solid transparent;
+  float: left;
+}
+.rectangle {
+  width: 150px;
+  height: 40px;
+  background: #246287;
+  float: left;
+  line-height: 40px;
+}
+
+
+.trapezoid {
+  border-bottom: 37px solid #EC5C51;
+  border-left: 21px solid transparent;
+  border-right: 21px solid transparent;
+  height: 0;
+  width: 139px;
+}

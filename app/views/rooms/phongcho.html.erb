@@ -12,7 +12,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to "Tìm phòng đấu", thidau_path %></li>
-       <li><%= link_to "Bảng xếp hạng", bangxephang_path %></li>
+        <li><%= link_to "Bảng xếp hạng", bangxephang_path %></li>
         <li><a href="#">Lịch sử thi đấu </a></li>
         <li><a href="#">Hướng dẫn</a></li>
       </ul>
@@ -42,43 +42,31 @@
   <div class="container-left col-sm-9">
     <div>
       <div class="container-title col-sm-6">
-        <h3>TẠO PHÒNG THI ĐẤU</h3>
+        <h3>PHÒNG CHUẨN BỊ THI ĐẤU</h3>
       </div>
-    </div>
-    <%= form_for @room do |room| %>
-    <div class="container-list-room col-sm-12" style='height: 435px; background-color: #005C73'>
-      <br>
-      <br>
-      <br>
-      <p>Tạo phòng đấu mới bằng cách chọn hình thức thi đấu và khẩu hiệu phòng (có thể bỏ qua)</p>
-      <br>
-      <p>CHỌN HÌNH THỨC THI ĐẤU</p>
-
-        <!-- <input type="radio" name="1vs1" style="margin-left:-45px;margin-top: 24px">Đối kháng (1 vs 1)<br> -->
-       <%= room.radio_button :loaiphong, :'Đối kháng', style: 'margin-left:-45px;margin-top: 24px' %> Đối kháng (1 vs 1)<br>
-       <%= room.radio_button :loaiphong, :'Đấu tập thể', style: 'margin-left:-35px;margin-top: 25px' %> Đấu tập thể (1 vs 9)<br>
-        <!-- <input type="radio" name="1vs1" style="margin-left:-35px;margin-top: 25px">Đấu tập thể (1 vs 9)<br> -->
-
-      <div class="container-title-select-one col-sm-3" style='margin-left: 180px' > 
-        <%= room.select(:tenphong, options_for_select([['Tất cả cá lớp'], ['Lớp 2'], ['Lớp 3'], ['Lớp 4'], ['Lớp 5']]), {}, {class: "form-control select"}) %>
+      <div class="container-title-select-one col-sm-3">
+      <!-- <button class="btn btn-success" style="margin-top: 16px;"">SẴN SÀNG</button> -->
+      <%= link_to "SẴN SÀNG", rooms_path, class: 'btn btn-success', style: 'margin-top: 16px' %>
       </div>
       <div class="container-title-select-two col-sm-3">
-        <%= room.select(:monthi, options_for_select([['Toán'], ['Tiếng Việt'], ['Tiếng anh'], ['Tiếng Nhật']]), {}, {class: "form-control select"}) %>
+        <!-- <button class="btn btn-danger" style="margin-top: 16px;margin-left: -52px;">RỜI PHÒNG</button> -->
+        <%= link_to "RỜI PHÒNG", thidau_path, class: 'btn btn-danger', style: 'margin-top: 16px;margin-left: -52px;' %>
       </div>
-      <br>
-      <br>
-      <br>
-       <input type="checkbox" name="1vs1" style="margin-left:-35px;margin-top: 25px"> Phòng thi đấu riêng <br>
-       <%#= f.check_box :attribute %>
-       <%= room.hidden_field :songuoi %>
-       <br>
-       <br>
-       <button class="btn btn-success">Tạo phòng</button> 
-       <%= link_to "Thoát", thidau_path, class: 'btn btn-danger' %>
+      <div class="container-list-room col-sm-12">
+        <div class="egg"></div>
+        <div class="egg"></div>
+        <div class="egg"></div>
+        <div class="egg"></div>
+        <div class="egg"></div>
+        <div class="egg"></div>
+        <div class="egg"></div>
+        <div class="egg"></div>
+        <div class="egg"></div>
+        <div class="egg"></div>
+      </div>
     </div>
-    <% end %>
   </div>
-  <div class="container-right col-sm-3 "></div>
+  <div class="container-right col-sm-3"></div>
 </div>
 <div class="footer col-md-12">
   

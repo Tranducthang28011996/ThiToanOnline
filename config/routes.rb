@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'thidau' => 'thidau#index'
   resources :rooms
   get 'bangxephang' => 'bangxephang#index'
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  get 'phongcho' => 'rooms#phongcho'
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks",
+                                       :sessions => "users/sessions" }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
