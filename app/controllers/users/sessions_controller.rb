@@ -18,6 +18,7 @@ class Users::SessionsController < Devise::SessionsController
     room_ids = User.find(session["user_id"]).room_ids
     User.find(session["user_id"]).rooms.destroy_all
     Room.where(id: room_ids).destroy_all
+    current_user.update_attribute(:last_sign_out_at, Time.now)
     super
   end
 
